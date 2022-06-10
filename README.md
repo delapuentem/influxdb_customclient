@@ -1,5 +1,5 @@
 # InfluxDB Custom Client
-Custom library of  python client influxdb 1.x https://github.com/influxdata/influxdb-python
+Custom library inheriting from influxdb 1.x python client https://github.com/influxdata/influxdb-python
 
 ## How to use
 
