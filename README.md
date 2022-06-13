@@ -50,7 +50,6 @@ Return a list of dicts with detail of last metric reveived for each database and
 ```python
 last_metric_list = influxdb_client.influxdb_last_metric_received_list(influxdb_measurements=influxdb_measurements)
 ```
-<<<<<<< HEAD
 
 ## Metrics
 
@@ -63,5 +62,3 @@ last_metric_list = influxdb_client.influxdb_last_metric_received_list(influxdb_m
 		- interval (int, minutes)
 		- last_metric_timestamp (time of last metric, 2022-06-12T09:00:11Z)
 		- last_metric (float, time in minutes since last metric)
-=======
->>>>>>> b401299fb7ff88a345399ad054d45a213c82fd95
