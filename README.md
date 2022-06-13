@@ -8,7 +8,11 @@ Custom library inheriting from influxdb 1.x python client https://github.com/inf
 Make sure that the user has read permissions in all the databases that you want to extract the information
 
 ```python
-influxdb_client = InfluxDBCustomClient(host='domain/ip_address', port=8086, username='my_username', password='my_password', ssl=False, verify_ssl=False)
+#!/usr/bin/env python3
+import influxdb_client
+
+# Make a connection
+influxdb_client = influxdb_customclient.InfluxDBCustomClient(host='domain/ip_address', port=8086, username='my_username', password='my_password', ssl=False, verify_ssl=False)
 ```
 
 ### Get all databases
