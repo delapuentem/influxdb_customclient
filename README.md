@@ -9,7 +9,7 @@ Make sure that the user has read permissions in all the databases that you want 
 
 ```python
 #!/usr/bin/env python3
-import influxdb_client
+import influxdb_customclient
 
 # Make a connection
 influxdb_client = influxdb_customclient.InfluxDBCustomClient(host='domain/ip_address', port=8086, username='my_username', password='my_password', ssl=False, verify_ssl=False)
