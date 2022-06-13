@@ -1,9 +1,12 @@
 # InfluxDB Custom Client
-Custom library of  python client influxdb 1.x https://github.com/influxdata/influxdb-python
+Custom library inheriting from influxdb 1.x python client https://github.com/influxdata/influxdb-python
 
 ## How to use
 
 ### Make a connection
+
+Make sure that the user has read permissions in all the databases that you want to extract the information
+
 ```python
 influxdb_client = InfluxDBCustomClient(host='domain/ip_address', port=8086, username='my_username', password='my_password', ssl=False, verify_ssl=False)
 ```
@@ -47,3 +50,15 @@ Return a list of dicts with detail of last metric reveived for each database and
 ```python
 last_metric_list = influxdb_client.influxdb_last_metric_received_list(influxdb_measurements=influxdb_measurements)
 ```
+
+## Metrics
+
+- influxdb_customclient
+	- tags:
+		- database
+		- measurement
+	- fields:
+		- result_code (int, 0-> has metrics, 1->has no metrics)
+		- interval (int, minutes)
+		- last_metric_timestamp (time of last metric, 2022-06-12T09:00:11Z)
+		- last_metric (float, time in minutes since last metric)

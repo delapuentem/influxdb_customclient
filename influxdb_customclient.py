@@ -107,14 +107,14 @@ class InfluxDBCustomClient(influxdb.InfluxDBClient):
             result_code=1
             return dict(database=database, measurement=measurement, result_code=result_code, interval=interval)
 
-    def influxdb_last_metric_received_list(self, influxdb_measurements):
+    def influxdb_last_metric_received_list(self, influxdb_measurements, interval=60):
         '''Return a list of dicts with detail of last metric reveived for each database and measurement'''
         influxdb_last_metric_received_list = []
         for database in influxdb_measurements:
             for measurement in influxdb_measurements[database]:
                 #print(f"{database} {measurement[1]}")
                 try:
-                    result = self.influxdb_last_metric_received(database=database, measurement=measurement[1])
+                    result = self.influxdb_last_metric_received(database=database, measurement=measurement[1], interval=interval)
                     influxdb_last_metric_received_list.append(result)
                 except influxdb.exceptions.InfluxDBClientError:
                     print("ERROR in QUERY for function influxdb_last_metric_received()")
