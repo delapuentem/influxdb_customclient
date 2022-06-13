@@ -48,6 +48,12 @@ last_metric = influxdb_client.influxdb_last_metric_received(database='my_databas
 Return a list of dicts with detail of last metric reveived for each database and measurement
 
 ```python
+# Set the interval in minutes (optional). if not specified, 10 minutes by default
+interval = 2400
+
+# Specifying an interval
+last_metric_list = influxdb_client.influxdb_last_metric_received_list(influxdb_measurements=influxdb_measurements, interval=interval)
+# Without specifying an interval (default)
 last_metric_list = influxdb_client.influxdb_last_metric_received_list(influxdb_measurements=influxdb_measurements)
 ```
 
