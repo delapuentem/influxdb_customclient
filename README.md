@@ -47,7 +47,7 @@ for database in influxdb_measurements:
 For a specific database measurement, know when the last metric was received. Last x minutes.
 
 ```python
-# Set the interval in minutes (optional). if not specified, 10 minutes by default
+# Set the interval in minutes (optional). if not specified, 60 minutes by default
 interval = 2400
 
 # Specifying an interval
