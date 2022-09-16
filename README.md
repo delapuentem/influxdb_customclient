@@ -35,6 +35,14 @@ Return a dict of lists of database and measurement as a list of tuples.
 influxdb_measurements = influxdb_client.influxdb_measurements(influxdb_databases=influxdb_databases)
 ```
 
+Accessing data.
+
+```python
+for database in influxdb_measurements:
+    for data in influxdb_measurements[database]:
+        print(f"database: {data[0]} measurement: {data[1]}")
+```
+
 ### Get the last metric of specific database and measurement
 For a specific database measurement, know when the last metric was received. Last x minutes.
 
